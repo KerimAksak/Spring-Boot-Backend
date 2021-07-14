@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import springTutorial.northwind.business.abstracts.ProductService;
+import springTutorial.northwind.core.utilities.results.DataResult;
+import springTutorial.northwind.core.utilities.results.SuccessDataResult;
 import springTutorial.northwind.dataAccess.abstracts.ProductDao;
 import springTutorial.northwind.entities.concretes.Product;
 
@@ -24,8 +26,11 @@ public class ProductManager implements ProductService {
 	}
 	
 	@Override
-	public List<Product> getAll() {
-		return this.prodactDao.findAll();
+	public DataResult<List<Product>> getAll() {
+	// DataResult&Result = Super Type
+	// Using the DataResult interface we can return both SuccessDataResult and ErrorDataResult.
+		return new SuccessDataResult<List<Product>>(this.prodactDao.findAll(),
+				"Data listelendi.");
 	}
 
 }

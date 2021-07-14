@@ -1,6 +1,6 @@
 package springTutorial.northwind.core.utilities.results;
 
-public class Result {
+public class Result { 
 	private boolean success;
 	private String message;
 	
