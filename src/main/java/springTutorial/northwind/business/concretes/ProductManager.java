@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import springTutorial.northwind.business.abstracts.ProductService;
 import springTutorial.northwind.core.utilities.results.DataResult;
+import springTutorial.northwind.core.utilities.results.Result;
 import springTutorial.northwind.core.utilities.results.SuccessDataResult;
+import springTutorial.northwind.core.utilities.results.SuccessResult;
 import springTutorial.northwind.dataAccess.abstracts.ProductDao;
 import springTutorial.northwind.entities.concretes.Product;
 
@@ -31,6 +33,12 @@ public class ProductManager implements ProductService {
 	// Using the DataResult interface we can return both SuccessDataResult and ErrorDataResult.
 		return new SuccessDataResult<List<Product>>(this.prodactDao.findAll(),
 				"Data listelendi.");
+	}
+
+	@Override
+	public Result add(Product product) {
+		this.prodactDao.save(product);
+		return new SuccessResult("Ürün eklendi");
 	}
 
 }
