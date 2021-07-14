@@ -25,8 +25,7 @@ public class ProductManager implements ProductService {
 	
 	@Override
 	public List<Product> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.prodactDao.findAll();
 	}
 
 }

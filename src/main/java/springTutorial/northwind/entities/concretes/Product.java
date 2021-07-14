@@ -7,28 +7,34 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity 
-@Table(name="Products")
+@Table(name="Product", schema = "Northwind")
 public class Product {
+	
+	// For MySql take in mind that it's not a good idea to write camelcase. 
+	// You must be very careful cause isActive column will translate to isactive. 
+	// *** productId --> productid
 	
 	@Id
 	@GeneratedValue
-	@Column(name="productId")
+	@Column(name="productid")
 	private int id;
 	
-	@Column(name="categoryId")
+	@Column(name="categoryid")
 	private int categoryId;
 	
-	@Column(name="productName")
+	@Column(name="productname")
 	private String productName;
 	
-	@Column(name="unitPrice")
+	@Column(name="unitprice")
 	private double unitPrice; 
 	
-	@Column(name="unitsInStock")
+	@Column(name="unitsinstock")
 	private short unitsInStock;
 	
-	@Column(name="quantityPerUnit")
+	@Column(name="quantityperunit")
 	private String quantityPerUnit;
+	
+	public Product() {};
 	
 	public Product(int id, int categoryId, String productName, double unitPrice, short unitsInStock,
 			String quantityPerUnit) {
