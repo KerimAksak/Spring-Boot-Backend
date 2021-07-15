@@ -10,8 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "Category", schema="Northwind")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"}) // It prevents data from coming recursively.
 public class Category {
 	
 	@Id
