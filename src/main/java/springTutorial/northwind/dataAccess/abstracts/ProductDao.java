@@ -15,22 +15,22 @@ public interface ProductDao extends JpaRepository<Product, Integer>{
 	
 	Product getByProductId(int productId);
 	
-	Product getByProductNameAndCategoryId(String productName, int categoryId);
+	Product getByProductNameAndCategory_CategoryId(String productName, int categoryId);
 
 	// It can return single or multiple data according to the return type.
 	
 	// SELECT * FROM Product WHERE productName="abc" and categoryId="1"
-	List<Product> getByProductNameOrCategoryId(String productName, int categoryId);
+	List<Product> getByProductNameOrCategory_CategoryId(String productName, int categoryId);
 	
 	// SELECT * FROM Product WHERE categoryId in(1,2,10)
-	List<Product> getByCategoryIdIn(List<Integer> categories);
+	List<Product> getByCategoryIn(List<Integer> categories);
 	
 	List<Product> getByProductNameContains(String productName);
 	
 	List<Product> getByProductNameStartsWith(String productName);
 	
 	// @Query; All content should be made according to Entity naming. Not based on database naming.
-	@Query("From Product where productName=:productName and categoryId=:categoryId")
+	@Query("From Product where productName=:productName and category.categoryId=:categoryId")
 	List<Product> getByNameAndCategory(String productName, int categoryId);
 	// SELECT * FROM product WHERE productName="abc" and categoryId=2
 

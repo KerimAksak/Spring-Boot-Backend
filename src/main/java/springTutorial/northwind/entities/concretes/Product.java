@@ -20,10 +20,10 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="productid")
-	private int id;
+	private int productId;
 	
-	@Column(name="categoryid")
-	private int categoryId;
+	//@Column(name="categoryid")
+	//private int categoryId;
 	
 	@Column(name="productname")
 	private String productName;
@@ -43,11 +43,11 @@ public class Product {
 	
 	public Product() {};
 	
-	public Product(int id, int categoryId, String productName, double unitPrice, short unitsInStock,
+	public Product(int productId, String productName, double unitPrice, short unitsInStock,
 			String quantityPerUnit) {
 		super();
-		this.id = id;
-		this.categoryId = categoryId;
+		this.productId = productId;
+		//this.categoryId = categoryId;
 		this.productName = productName;
 		this.unitPrice = unitPrice;
 		this.unitsInStock = unitsInStock;
@@ -55,13 +55,13 @@ public class Product {
 	}
 
 	public int getId() {
-		return id;
+		return productId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int productId) {
+		this.productId = productId;
 	}
-
+	/*
 	public int getCategoryId() {
 		return categoryId;
 	}
@@ -69,7 +69,7 @@ public class Product {
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
-
+	*/
 	public String getProductName() {
 		return productName;
 	}

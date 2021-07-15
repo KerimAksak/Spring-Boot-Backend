@@ -23,8 +23,8 @@ public class Category {
 	private String categoryName;
 	
 	// We indicate that there is a One To Many relationship with the Product table.
-	@OneToMany(mappedBy = "Category")
-	private List<Product> product;
+	@OneToMany(mappedBy = "category")
+	private List<Product> products;
 	
 	
 	public Category() { }
