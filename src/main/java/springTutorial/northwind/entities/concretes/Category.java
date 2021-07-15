@@ -1,10 +1,13 @@
 package springTutorial.northwind.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +21,11 @@ public class Category {
 	
 	@Column(name = "categoryname")
 	private String categoryName;
+	
+	// We indicate that there is a One To Many relationship with the Product table.
+	@OneToMany(mappedBy = "Category")
+	private List<Product> product;
+	
 	
 	public Category() { }
 
