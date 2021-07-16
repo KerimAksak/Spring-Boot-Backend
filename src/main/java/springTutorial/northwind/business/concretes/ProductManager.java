@@ -15,6 +15,7 @@ import springTutorial.northwind.core.utilities.results.SuccessDataResult;
 import springTutorial.northwind.core.utilities.results.SuccessResult;
 import springTutorial.northwind.dataAccess.abstracts.ProductDao;
 import springTutorial.northwind.entities.concretes.Product;
+import springTutorial.northwind.entities.dtos.ProductWithCategoryDto;
 
 // In addition, we specify that this class is the service layer.
 @Service
@@ -102,6 +103,12 @@ public class ProductManager implements ProductService {
 	public DataResult<List<Product>> getAllSorted() {
 		Sort sort = Sort.by(Sort.Direction.DESC, "productName");
 		return new SuccessDataResult<List<Product>>(this.prodactDao.findAll(sort), "Başarılı.");
+	}
+
+	@Override
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+		return new SuccessDataResult<List<ProductWithCategoryDto>>(this.prodactDao.getProductWithCategoryDetails(),
+				"Data listelendi.");
 	}
 
 }

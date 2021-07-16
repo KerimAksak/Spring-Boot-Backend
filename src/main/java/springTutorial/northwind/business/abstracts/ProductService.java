@@ -5,6 +5,7 @@ import java.util.List;
 import springTutorial.northwind.core.utilities.results.DataResult;
 import springTutorial.northwind.core.utilities.results.Result;
 import springTutorial.northwind.entities.concretes.Product;
+import springTutorial.northwind.entities.dtos.ProductWithCategoryDto;
 
 public interface ProductService {
 	DataResult<List<Product>> getAll();
@@ -31,4 +32,6 @@ public interface ProductService {
 	DataResult<List<Product>> getAll(int pageNumber, int pageSize);
 	
 	DataResult<List<Product>> getAllSorted();
+	
+	DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 }
