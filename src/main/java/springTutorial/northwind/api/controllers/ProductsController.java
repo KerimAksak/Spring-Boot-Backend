@@ -14,6 +14,7 @@ import springTutorial.northwind.business.abstracts.ProductService;
 import springTutorial.northwind.core.utilities.results.DataResult;
 import springTutorial.northwind.core.utilities.results.Result;
 import springTutorial.northwind.entities.concretes.Product;
+import springTutorial.northwind.entities.dtos.ProductWithCategoryDto;
 
 @RestController
 @RequestMapping("/api/products")
@@ -84,6 +85,11 @@ public class ProductsController {
 	public DataResult<List<Product>> getAllSorted(){
 		return this.productService.getAllSorted();
 	}
+	
+	@GetMapping("/getProductWithCategoryDetails")
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
+		return this.productService.getProductWithCategoryDetails();
+	};
 	
 }
 

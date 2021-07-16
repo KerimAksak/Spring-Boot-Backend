@@ -2,15 +2,15 @@ package springTutorial.northwind.entities.dtos;
 
 
 public class ProductWithCategoryDto {
-	private String productName;
 	private int id;
+	private String productName;
 	private String categoryName;
 	
 	public ProductWithCategoryDto() {
 		super();
 	}
 
-	public ProductWithCategoryDto(String productName, int id, String categoryName) {
+	public ProductWithCategoryDto(int id, String productName, String categoryName) {
 		super();
 		this.productName = productName;
 		this.id = id;
