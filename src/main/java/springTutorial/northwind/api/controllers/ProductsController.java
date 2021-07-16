@@ -75,6 +75,11 @@ public class ProductsController {
 		return this.productService.getByNameAndCategory(productName, categoryId);
 	}
 	
+	@GetMapping("/getAllByPage")
+	public DataResult<List<Product>> getAll(@RequestParam("pageNumber") int pageNumber,@RequestParam("pageSize") int pageSize){
+		return this.productService.getAll(pageNumber, pageSize);
+	};
+	
 }
 
 
