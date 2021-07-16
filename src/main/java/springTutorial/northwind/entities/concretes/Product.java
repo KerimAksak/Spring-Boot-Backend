@@ -37,6 +37,10 @@ public class Product {
 	@Column(name="quantityperunit")
 	private String quantityPerUnit;
 	
+	
+	// The relation between Product and Category is made over categoryId.
+	// That's why a join operation is performed with categoryId to ensure the relationship in the Product.
+	// It's as if there is no need to write categoryId in the Product again, as it places the Category columns in the Product.
 	@ManyToOne()
 	@JoinColumn(name = "categoryid")
 	private Category category;
