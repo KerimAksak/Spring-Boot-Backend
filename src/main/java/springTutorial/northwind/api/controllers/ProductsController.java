@@ -80,6 +80,11 @@ public class ProductsController {
 		return this.productService.getAll(pageNumber, pageSize);
 	};
 	
+	@GetMapping("/getAllDesc")
+	public DataResult<List<Product>> getAllSorted(){
+		return this.productService.getAllSorted();
+	}
+	
 }
 
 

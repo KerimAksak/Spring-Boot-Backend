@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import springTutorial.northwind.business.abstracts.ProductService;
@@ -95,6 +96,12 @@ public class ProductManager implements ProductService {
 	public DataResult<List<Product>> getAll(int pageNumber, int pageSize) {
 		Pageable pageable = PageRequest.of(pageNumber-1, pageSize);
 		return new SuccessDataResult<List<Product>>(this.prodactDao.findAll(pageable).getContent()); 
+	}
+
+	@Override
+	public DataResult<List<Product>> getAllSorted() {
+		Sort sort = Sort.by(Sort.Direction.DESC, "productName");
+		return new SuccessDataResult<List<Product>>(this.prodactDao.findAll(sort), "Başarılı.");
 	}
 
 }

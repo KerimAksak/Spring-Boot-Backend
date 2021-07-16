@@ -29,4 +29,6 @@ public interface ProductService {
 	
 	// Pagination
 	DataResult<List<Product>> getAll(int pageNumber, int pageSize);
+	
+	DataResult<List<Product>> getAllSorted();
 }
