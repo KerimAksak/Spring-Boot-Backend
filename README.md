@@ -9,17 +9,17 @@ Script for mysql database: [<i>script</i>](https://github.com/harryho/db-samples
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
-### Endpoints in the project
+### Endpoints in the project
 
 ![1]()
 
-### /getAllByPage
+### /getAllByPage
 
 ![2]()
 
 ![3]()
 
-### Adding users to the database (first code)
+### Adding users to the database (first code)
 
 ![4]()
 
