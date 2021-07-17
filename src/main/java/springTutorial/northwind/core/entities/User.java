@@ -10,6 +10,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+// JpaRepository, works as Code First. Even if there is no User table in the database, it creates it by itself.
+
 @Entity
 @Table(name ="users", schema = "Northwind")
 public class User {
