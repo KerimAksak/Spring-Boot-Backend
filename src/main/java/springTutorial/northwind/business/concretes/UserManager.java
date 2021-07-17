@@ -29,8 +29,8 @@ public class UserManager implements UserService {
 	}
 
 	@Override
-	public DataResult<User> findByEmial(String email) {
-		return new SuccessDataResult<User>(this.userDao.findByEmial(email),"Kullanıcı bulundu.");
+	public DataResult<User> findByEmail(String email) {
+		return new SuccessDataResult<User>(this.userDao.findByEmail(email),"Kullanıcı bulundu.");
 	}
 
 }

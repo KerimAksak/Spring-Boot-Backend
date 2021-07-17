@@ -8,6 +8,6 @@ public interface UserService {
 	
 	Result add(User user);
 	
-	DataResult<User> findByEmial(String email);
+	DataResult<User> findByEmail(String email);
 
 }
