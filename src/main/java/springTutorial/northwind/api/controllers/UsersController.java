@@ -3,6 +3,8 @@ package springTutorial.northwind.api.controllers;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +35,8 @@ public class UsersController {
 	// HTTP response status codes
 	// (?) Success or Error 
 	@RequestMapping(value = "/add")
-	public ResponseEntity<?> add(@RequestBody User user) {
+	// @Valid; Test validation
+	public ResponseEntity<?> add(@Valid @RequestBody User user) {
 		return ResponseEntity.ok(this.userService.add(user));
 	}
 	
