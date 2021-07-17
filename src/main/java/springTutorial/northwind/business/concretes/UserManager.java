@@ -1,6 +1,7 @@
 package springTutorial.northwind.business.concretes;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import springTutorial.northwind.business.abstracts.UserService;
 import springTutorial.northwind.core.dataAccess.UserDao;
@@ -10,6 +11,7 @@ import springTutorial.northwind.core.utilities.results.Result;
 import springTutorial.northwind.core.utilities.results.SuccessDataResult;
 import springTutorial.northwind.core.utilities.results.SuccessResult;
 
+@Service
 public class UserManager implements UserService {
 	
 	private UserDao userDao;

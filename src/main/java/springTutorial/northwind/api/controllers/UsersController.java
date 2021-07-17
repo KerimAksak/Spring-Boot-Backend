@@ -14,6 +14,7 @@ public class UsersController {
 	
 	private UserService userService;
 
+	@Autowired
 	public UsersController(UserService userService) {
 		super();
 		this.userService = userService;
